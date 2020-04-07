@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'RoleController@index');
+Route::get('/ok_register', 'Auth\RegisterController@index');
 
 //Route::post('/register', 'RegisterControllerr@index');
 

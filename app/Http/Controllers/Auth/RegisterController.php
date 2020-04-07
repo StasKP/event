@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/ok_register';
 
     /**
      * Create a new controller instance.
@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'ava' => ['required', 'image', 'max:5120'],
+            'ava' => ['required', 'mimes:jpg,jpeg,png', 'max:5120'],
         ]);
     }
 
@@ -81,5 +81,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'ava' => url('/public/storage/avatars/'.$filename),
         ]);
+    }
+
+    protected function index(){
+        return view('/auth/ok_register');
     }
 }

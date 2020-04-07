@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Регистрация') }}</div>
+                <div class="card-header bg-dark text-light">{{ __('Регистрация') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -99,7 +99,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Фотография') }}</label>
 
                             <div class="col-md-6">
-                                <input id="ava" type="file" class="form-control  @error('ava') is-invalid @enderror" name="ava" required autocomplete="ava">
+                                <input id="ava" type="file" class="form-control-file  @error('ava') is-invalid @enderror" name="ava" required autocomplete="ava">
 
                                 @error('ava')
                                 <span class="invalid-feedback" role="alert">
@@ -112,7 +112,7 @@
                         {{--Кнопка зарегистрировать--}}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Зарегистрировать') }}
                                 </button>
                             </div>
